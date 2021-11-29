@@ -4,7 +4,7 @@ pipeline {
     stage('Prep') {
       steps {
         echo "Hello"
-        sh test.sh
+        sh mvn clean install 
       }
     }
   }
