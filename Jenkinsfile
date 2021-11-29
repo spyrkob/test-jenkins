@@ -2,6 +2,9 @@ pipeline {
   agent {
     label "large-cloud"
   }
+  triggers {
+    pollSCM('* */15 * * *')
+  {
   stages {
     stage('Prep') {
       steps {
