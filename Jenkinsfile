@@ -11,16 +11,14 @@ pipeline {
     success {
       script {
         if (env.CHANGE_ID) {
-          pullRequest.removeLabel('Fail')
-          pullRequest.addLabel('Pass')
+          githubNotify status: 'SUCCESS'
         }
       }
     }
     failure {
       script {
         if (env.CHANGE_ID) {
-          pullRequest.removeLabel('Pass')
-          pullRequest.addLabel('Fail')
+          githubNotify status: 'FAILURE'
         }
       }
     }
