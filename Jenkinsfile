@@ -4,7 +4,7 @@ pipeline {
     stage('Prep') {
       steps {
         echo "Hello"
-        sh "mvn clean install"
+        sh "/opt/apache-maven-3.6.3/bin/mvn clean install"
       }
     }
   }
